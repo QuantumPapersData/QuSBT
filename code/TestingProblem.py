@@ -34,7 +34,8 @@ class TestingProblem(IntegerProblem):
     def evaluate(self, solution: IntegerSolution) -> IntegerSolution:
         variables = np.array(solution.variables)
         p = calculate_fail_number_GA(variables, self.dec2bin_param, self.group_name, self.program_name, self.algorithm)
-        solution.objectives[0] = p
+        # the value is negated because we want to maximize "p" using a minimization problem
+        solution.objectives[0] = -p
         return solution
 
     def get_name(self) -> str:
