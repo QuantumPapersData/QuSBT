@@ -143,7 +143,7 @@ def calculate_fail_number_GA(input, dec2bin_param, group_name, program_name, alg
     f.write('\n')
 
     print(count_fail)
-    return -count_fail
+    return count_fail
 
 
 def get_counts(program_name, group_name, count_times, i, input):
